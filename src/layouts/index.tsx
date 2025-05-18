@@ -1,22 +1,19 @@
-import { Body, Container, Content, Main } from 'layouts/styles'
-import { ReactNode } from 'react'
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { ReactNode } from "react";
 
 export default function Layout(props: { element: ReactNode }) {
   return (
-    <Container>
-      <Body>
-        <Main>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              width: '100%',
-            }}
-          >
-            <Content>{props.element}</Content>
+    <div className="h-screen m-0 p-0 justify-between flex flex-col">
+      <Header />
+      <div className="flex flex-1 md:flex">
+        <div className="flex flex-row flex-1">
+          <div className="flex flex-col w-full h-full overflow-x-hidden">
+            {props.element}
           </div>
-        </Main>
-      </Body>
-    </Container>
-  )
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 }

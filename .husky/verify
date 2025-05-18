@@ -1,0 +1,46 @@
+echo ''
+echo '🚀 Iniciando a checagem de formatação, problemas de sintaxe, tipagem e construção.'
+echo ''
+
+echo '🎨 Checando a formatação...'
+yarn check-format ||
+(
+    echo '💥💥💥 Formatação está incorreta! 💥💥💥'
+    echo 'Formate o código utilizando a o commando "npm run format" ou "yarn format"'
+    echo 'E não esqueça de adicionar as mudanças ao git e faça o commit novamente'
+    false;
+)
+echo ''
+echo '✅ Formatação sem problemas'
+echo ''
+echo '🎨 Checando a Sintaxe...'
+yarn check-lint ||
+(
+    echo '💥💥💥 Código com problemas na sintaxe! 💥💥💥
+      A checagem do ESLint falhou!. Verifique os problemas informados pelo ESlint, corrija e realize o commit novamente..'
+    false; 
+)
+echo ''
+echo '✅ Sintaxe sem problemas'
+echo ''
+
+
+echo '✏️ Checando a tipagem...'
+yarn check-types ||
+(
+    echo '💥💥💥 Código com tipagem errada! 💥💥💥
+      O tsconfig encontrou erros na tipagem, realize as alterações necessárias e faça o commit novamente.'
+    false;
+)
+echo ''
+echo '✅ Tipagem sem problemas'
+echo ''
+
+echo '🔨 Inicializando a construção do projeto (Building)'
+yarn build ||
+(
+    echo '💥👷🔨💥 Ocorreu um erro na construção (Build) do projeto 💥👷🔨💥'
+    echo 'Verifique os erros informados, corrija e faça o commit novamente.'
+    false;
+)
+echo '✅ Código sem erros de formatação, tipagem, sintaxe e construção!'
