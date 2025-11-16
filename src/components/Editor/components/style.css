@@ -1,0 +1,17 @@
+.menu-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.menu-bar button {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.menu-bar button.is-active {
+  background: #333;
+  color: #fff;
+}

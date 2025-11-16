@@ -38,3 +38,23 @@ Material UI is also used for additional UI components.
 
 - **Node.js:** v22.15.1  
 - **Yarn:** v4.9.1
+
+
+## Infrastructure
+
+### Backend
+
+- MongoDB (Banco de dados NoSQL)
+- Render (Infra)
+- Login (Autenticação) com JWT e bcrypt
+
+### Frontend
+
+- React
+- TypeScript
+- Tailwind CSS
+- Lexical Editor
+- Material UI
+- Shadcn UI
+- Vercel
+
